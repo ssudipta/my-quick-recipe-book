@@ -1,6 +1,7 @@
 import '../styles/App.css';
 import React, { useEffect, useState} from 'react';
 import Recipe from '../component/Recipe';
+import Header from '../component/Header';
 
 
 const App = ()=> {
@@ -38,10 +39,7 @@ const App = ()=> {
 
   return (
     <div className="App">
-      <form onSubmit={getSearch} className="search-form">
-        <input type="text" className="search-bar" onChange={handleSearch} value={search}/>
-        <button type="submit" className="search-button"> Search </button>
-      </form>
+      <Header handleSearch={handleSearch} getSearch={getSearch} search={search}/>
       <div className="recipes">
         {recipes.map(recipe => (
           <Recipe
